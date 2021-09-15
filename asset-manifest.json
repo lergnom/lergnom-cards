@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lergnom-cards/static/css/main.b71c0f2c.chunk.css",
+    "main.js": "/lergnom-cards/static/js/main.6de5ac26.chunk.js",
+    "main.js.map": "/lergnom-cards/static/js/main.6de5ac26.chunk.js.map",
+    "runtime-main.js": "/lergnom-cards/static/js/runtime-main.b53533b2.js",
+    "runtime-main.js.map": "/lergnom-cards/static/js/runtime-main.b53533b2.js.map",
+    "static/js/2.a08605b6.chunk.js": "/lergnom-cards/static/js/2.a08605b6.chunk.js",
+    "static/js/2.a08605b6.chunk.js.map": "/lergnom-cards/static/js/2.a08605b6.chunk.js.map",
+    "static/js/3.bb669e2f.chunk.js": "/lergnom-cards/static/js/3.bb669e2f.chunk.js",
+    "static/js/3.bb669e2f.chunk.js.map": "/lergnom-cards/static/js/3.bb669e2f.chunk.js.map",
+    "index.html": "/lergnom-cards/index.html",
+    "static/css/main.b71c0f2c.chunk.css.map": "/lergnom-cards/static/css/main.b71c0f2c.chunk.css.map",
+    "static/js/2.a08605b6.chunk.js.LICENSE.txt": "/lergnom-cards/static/js/2.a08605b6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b53533b2.js",
+    "static/js/2.a08605b6.chunk.js",
+    "static/css/main.b71c0f2c.chunk.css",
+    "static/js/main.6de5ac26.chunk.js"
+  ]
+}
