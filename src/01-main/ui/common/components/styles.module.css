@@ -1,0 +1,38 @@
+.ulWrapper {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+
+}
+
+.ulWrapper li {
+    margin: 0 5px;
+
+
+}
+
+.ulWrapper li span {
+    margin: 0 5px;
+}
+
+.ulWrapper li a {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+}
+
+.ulWrapper li a:hover {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+
+.ulWrapper li a  .active {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}

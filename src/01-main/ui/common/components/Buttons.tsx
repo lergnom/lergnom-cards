@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Inputs.module.css";
+import s from "./styles.module.css";
 import SuperButton from "./SuperButton/SuperButton";
 
 
@@ -16,6 +16,11 @@ export const Buttons = () => {
                 <li>
                     <SuperButton btnPrimary>
                         Primary
+                    </SuperButton>
+                </li>
+                <li>
+                    <SuperButton btnSecondary>
+                       Secondary
                     </SuperButton>
                 </li>
                 <li>
