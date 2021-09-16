@@ -54,6 +54,15 @@ export const Header = () => {
                     </NavLink>
                 </li>
             </ul>
+            <ul className={s.ulWrapper}>
+                <h3>Example:</h3>
+                <li>
+                    <NavLink to={PATH.TABLE_USER} activeClassName={s.active}>
+                        Redux/Reducer/Thunk
+                    </NavLink>
+                </li>
+
+            </ul>
 
         </>
     );

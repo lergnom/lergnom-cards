@@ -8,6 +8,7 @@ import {RegistrationPage} from "../../../02-features/f1-auth/a2-register/r1-regi
 import {Profile} from "../../../02-features/f1-auth/a3-profile/Profile";
 import {PasswordRecovery} from "../../../02-features/f1-auth/a4-passwordRecovery/PasswordRecovery";
 import {PageNotFound} from "../../../02-features/f1-auth/a5-pageNotFound/PageNotFound";
+import {TableUsers} from "../TableUsers";
 
 export const PATH = {
     HOME: '/',
@@ -18,6 +19,7 @@ export const PATH = {
     LOGIN_SIGN_UP: '/registration',
     PROFILE_PAGE: '/profile',
     PASSWORD_RECOVERY_PAGE: '/pass',
+    TABLE_USER: '/table',
     PAGE_NOT_FOUND: '/404',
 };
 
@@ -31,6 +33,7 @@ export const Routes = () => {
                 <Route path={'#/profile'} exact render={() => <Redirect to={PATH.PROFILE_PAGE}/>}/>
                 <Route path={'#/pass'} exact render={() => <Redirect to={PATH.PASSWORD_RECOVERY_PAGE}/>}/>
                 <Route path={'#/404'} exact render={() => <Redirect to={PATH.PAGE_NOT_FOUND}/>}/>
+                <Route path={'#/tableUsers'} exact render={() => <Redirect to={PATH.PAGE_NOT_FOUND}/>}/>
                 <Route path={PATH.SUPER_BUTTON} render={() => <Buttons/>}/>
                 <Route path={PATH.SUPER_CHECKBOX} render={() => <Checkboxs/>}/>
                 <Route path={PATH.SUPER_INPUT} render={() => <Inputs/>}/>
@@ -39,6 +42,7 @@ export const Routes = () => {
                 <Route path={PATH.PROFILE_PAGE} render={() => <Profile/>}/>
                 <Route path={PATH.PASSWORD_RECOVERY_PAGE} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PAGE_NOT_FOUND} render={() => <PageNotFound/>}/>
+                <Route path={PATH.TABLE_USER} render={() => <TableUsers/>}/>
             </Switch>
         </>
     );
