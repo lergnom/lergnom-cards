@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {PATH} from "./Routes";
-import s from "./common/components/styles.module.css";
+import {PATH} from "../routes/Routes";
+import s from "../common/components/styles.module.css";
 
 export const Header = () => {
     return (

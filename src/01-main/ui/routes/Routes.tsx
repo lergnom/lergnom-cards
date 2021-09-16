@@ -1,13 +1,13 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
-import {Buttons} from "./common/components/Buttons";
-import {Checkboxs} from "./common/components/Checkboxs";
-import {Inputs} from "./common/components/Inputs";
-import {LoginPage} from "../../02-features/f1-auth/a1-login/l1-loginPage/LoginPage";
-import {RegistrationPage} from "../../02-features/f1-auth/a2-register/r1-registrationPage/RegistrationPage";
-import {Profile} from "../../02-features/f1-auth/a3-profile/Profile";
-import {PasswordRecovery} from "../../02-features/f1-auth/a4-passwordRecovery/PasswordRecovery";
-import {PageNotFound} from "../../02-features/f1-auth/a5-pageNotFound/PageNotFound";
+import {Buttons} from "../common/components/Buttons";
+import {Checkboxs} from "../common/components/Checkboxs";
+import {Inputs} from "../common/components/Inputs";
+import {LoginPage} from "../../../02-features/f1-auth/a1-login/l1-loginPage/LoginPage";
+import {RegistrationPage} from "../../../02-features/f1-auth/a2-register/r1-registrationPage/RegistrationPage";
+import {Profile} from "../../../02-features/f1-auth/a3-profile/Profile";
+import {PasswordRecovery} from "../../../02-features/f1-auth/a4-passwordRecovery/PasswordRecovery";
+import {PageNotFound} from "../../../02-features/f1-auth/a5-pageNotFound/PageNotFound";
 
 export const PATH = {
     HOME: '/',
