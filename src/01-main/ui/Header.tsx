@@ -10,13 +10,13 @@ export const Header = () => {
                 <h3>Pages:</h3>
                 <li>
                     <NavLink to={PATH.LOGIN_PAGE} activeClassName={s.active}>
-                        Login
+                        SignIn
                     </NavLink>
                 </li>
 
                 <li>
                     <NavLink to={PATH.LOGIN_SIGN_UP} activeClassName={s.active}>
-                        Registaration
+                        SignUp
                     </NavLink>
                 </li>
                 <li>
@@ -26,7 +26,7 @@ export const Header = () => {
                 </li>
                 <li>
                     <NavLink to={PATH.PASSWORD_RECOVERY_PAGE} activeClassName={s.active}>
-                        Password recovery
+                        UnPass
                     </NavLink>
                 </li>
                 <li>
@@ -39,18 +39,18 @@ export const Header = () => {
                 <h3>Components:</h3>
                 <li>
                     <NavLink to={PATH.SUPER_BUTTON} activeClassName={s.active}>
-                        Button example
+                        Button
                     </NavLink>
                 </li>
 
                 <li>
                     <NavLink to={PATH.SUPER_INPUT} activeClassName={s.active}>
-                        Input example
+                        Input
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to={PATH.SUPER_CHECKBOX} activeClassName={s.active}>
-                        CheckBox example
+                        CheckBox
                     </NavLink>
                 </li>
             </ul>
