@@ -28,12 +28,6 @@ export const Routes = () => {
         <>
             <Switch>
                 <Route path={'/'} exact render={() => <Redirect to={PATH.HOME}/>}/>
-                <Route path={'#/login'} exact render={() => <Redirect to={PATH.LOGIN_PAGE}/>}/>
-                <Route path={'#/registration'} exact render={() => <Redirect to={PATH.LOGIN_PAGE}/>}/>
-                <Route path={'#/profile'} exact render={() => <Redirect to={PATH.PROFILE_PAGE}/>}/>
-                <Route path={'#/pass'} exact render={() => <Redirect to={PATH.PASSWORD_RECOVERY_PAGE}/>}/>
-                <Route path={'#/404'} exact render={() => <Redirect to={PATH.PAGE_NOT_FOUND}/>}/>
-                <Route path={'#/tableUsers'} exact render={() => <Redirect to={PATH.PAGE_NOT_FOUND}/>}/>
                 <Route path={PATH.SUPER_BUTTON} render={() => <Buttons/>}/>
                 <Route path={PATH.SUPER_CHECKBOX} render={() => <Checkboxs/>}/>
                 <Route path={PATH.SUPER_INPUT} render={() => <Inputs/>}/>

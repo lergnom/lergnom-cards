@@ -6,10 +6,7 @@ const instance = axios.create({
 
 
 export const requestApi = {
-    post(value: boolean) {
-        return instance.post(`test/`, {success: value});
-    },
-    get() {
+       get() {
         return instance.get(``);
     }
 }
