@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/lergnom-cards/static/css/main.2484e2d5.chunk.css",
-    "main.js": "/lergnom-cards/static/js/main.21ca6ad7.chunk.js",
-    "main.js.map": "/lergnom-cards/static/js/main.21ca6ad7.chunk.js.map",
+    "main.js": "/lergnom-cards/static/js/main.2b0daa9b.chunk.js",
+    "main.js.map": "/lergnom-cards/static/js/main.2b0daa9b.chunk.js.map",
     "runtime-main.js": "/lergnom-cards/static/js/runtime-main.3c905ff0.js",
     "runtime-main.js.map": "/lergnom-cards/static/js/runtime-main.3c905ff0.js.map",
-    "static/js/2.7a327a51.chunk.js": "/lergnom-cards/static/js/2.7a327a51.chunk.js",
-    "static/js/2.7a327a51.chunk.js.map": "/lergnom-cards/static/js/2.7a327a51.chunk.js.map",
+    "static/js/2.03f440e4.chunk.js": "/lergnom-cards/static/js/2.03f440e4.chunk.js",
+    "static/js/2.03f440e4.chunk.js.map": "/lergnom-cards/static/js/2.03f440e4.chunk.js.map",
     "static/js/3.9d5815ca.chunk.js": "/lergnom-cards/static/js/3.9d5815ca.chunk.js",
     "static/js/3.9d5815ca.chunk.js.map": "/lergnom-cards/static/js/3.9d5815ca.chunk.js.map",
     "index.html": "/lergnom-cards/index.html",
     "static/css/main.2484e2d5.chunk.css.map": "/lergnom-cards/static/css/main.2484e2d5.chunk.css.map",
-    "static/js/2.7a327a51.chunk.js.LICENSE.txt": "/lergnom-cards/static/js/2.7a327a51.chunk.js.LICENSE.txt",
+    "static/js/2.03f440e4.chunk.js.LICENSE.txt": "/lergnom-cards/static/js/2.03f440e4.chunk.js.LICENSE.txt",
     "static/media/SuperCheckBox.module.css": "/lergnom-cards/static/media/check-solid.ea9ba5b2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3c905ff0.js",
-    "static/js/2.7a327a51.chunk.js",
+    "static/js/2.03f440e4.chunk.js",
     "static/css/main.2484e2d5.chunk.css",
-    "static/js/main.21ca6ad7.chunk.js"
+    "static/js/main.2b0daa9b.chunk.js"
   ]
 }
