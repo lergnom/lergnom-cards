@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lergnom-cards/static/css/main.e594b7d9.chunk.css",
+    "main.css": "/lergnom-cards/static/css/main.3c85b8c2.chunk.css",
     "main.js": "/lergnom-cards/static/js/main.1b6ed786.chunk.js",
     "main.js.map": "/lergnom-cards/static/js/main.1b6ed786.chunk.js.map",
     "runtime-main.js": "/lergnom-cards/static/js/runtime-main.6993e754.js",
@@ -10,14 +10,14 @@
     "static/js/3.abdb5257.chunk.js": "/lergnom-cards/static/js/3.abdb5257.chunk.js",
     "static/js/3.abdb5257.chunk.js.map": "/lergnom-cards/static/js/3.abdb5257.chunk.js.map",
     "index.html": "/lergnom-cards/index.html",
-    "static/css/main.e594b7d9.chunk.css.map": "/lergnom-cards/static/css/main.e594b7d9.chunk.css.map",
+    "static/css/main.3c85b8c2.chunk.css.map": "/lergnom-cards/static/css/main.3c85b8c2.chunk.css.map",
     "static/js/2.7ec46b5d.chunk.js.LICENSE.txt": "/lergnom-cards/static/js/2.7ec46b5d.chunk.js.LICENSE.txt",
     "static/media/SuperCheckBox.module.css": "/lergnom-cards/static/media/check-solid.ea9ba5b2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6993e754.js",
     "static/js/2.7ec46b5d.chunk.js",
-    "static/css/main.e594b7d9.chunk.css",
+    "static/css/main.3c85b8c2.chunk.css",
     "static/js/main.1b6ed786.chunk.js"
   ]
 }
