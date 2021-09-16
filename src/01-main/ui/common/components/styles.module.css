@@ -1,7 +1,7 @@
 .ulWrapper {
     display: flex;
     list-style: none;
-    align-items: center;
+    align-items: baseline;
 
 
 }
@@ -31,7 +31,7 @@
     border-color: #dae0e5;
 }
 
-.ulWrapper li a  .active {
+.ulWrapper .active {
     color: #212529;
     background-color: #dae0e5;
     border-color: #d3d9df;

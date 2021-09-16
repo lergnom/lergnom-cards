@@ -9,8 +9,15 @@ export const Checkboxs = () => {
             <ul className={s.ulWrapper}>
                 Checkbox:
                 <li>
-                  <SuperCheckbox checked></SuperCheckbox>
+                    <SuperCheckbox checked> checked</SuperCheckbox>
                 </li>
+                <li>
+                    <SuperCheckbox checked={false}>unchecked</SuperCheckbox>
+                </li>
+
+                {/*<li>*/}
+                {/*  Недоработанная компонента  <SuperCheckboxToggle checked>toggle</SuperCheckboxToggle> */}
+                {/*</li>*/}
             </ul>
         </>
     );

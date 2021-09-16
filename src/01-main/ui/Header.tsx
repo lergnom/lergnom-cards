@@ -9,28 +9,28 @@ export const Header = () => {
             <ul className={s.ulWrapper}>
                 <h3>Pages:</h3>
                 <li>
-                    <NavLink to={PATH.SUPER_BUTTON} activeClassName={s.active}>
+                    <NavLink to={PATH.LOGIN_PAGE} activeClassName={s.active}>
                         Login
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to={PATH.SUPER_INPUT} activeClassName={s.active}>
+                    <NavLink to={PATH.LOGIN_SIGN_UP} activeClassName={s.active}>
                         Registaration
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={PATH.SUPER_CHECKBOX} activeClassName={s.active}>
+                    <NavLink to={PATH.PROFILE_PAGE} activeClassName={s.active}>
                         Profile
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={PATH.SUPER_CHECKBOX} activeClassName={s.active}>
+                    <NavLink to={PATH.PASSWORD_RECOVERY_PAGE} activeClassName={s.active}>
                         Password recovery
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={PATH.SUPER_CHECKBOX} activeClassName={s.active}>
+                    <NavLink to={PATH.PAGE_NOT_FOUND} activeClassName={s.active}>
                         404
                     </NavLink>
                 </li>
