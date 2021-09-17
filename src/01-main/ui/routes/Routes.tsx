@@ -37,6 +37,8 @@ export const Routes = () => {
                 <Route path={PATH.PASSWORD_RECOVERY_PAGE} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PAGE_NOT_FOUND} render={() => <PageNotFound/>}/>
                 <Route path={PATH.TABLE_USER} render={() => <TableUsers/>}/>
+                <Route path={'*'} render={() => <PageNotFound/>}/>
+
             </Switch>
         </>
     );
