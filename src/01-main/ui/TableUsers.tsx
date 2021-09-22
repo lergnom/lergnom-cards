@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../bll/store";
 import {InitStateType, setUsers} from "../bll/user-reducer";
 import {SuperCheckbox} from "./common/components/SuperCheckBox/SuperCheckBox";
+import {requestApi} from "../dal/api";
 
 export const TableUsers = () => {
     const users = useSelector<AppStoreType, Array<InitStateType>>(state => state.users);
@@ -24,19 +25,42 @@ export const TableUsers = () => {
         dispatch(setUsers());
     }, []);
 
+    const clickHandler = () => {
+
+        console.log("Button");
+        requestApi.authLogin()
+            .then(res => {
+                console.log(res.status);
+            });
+    };
+
+    const clickAuthHandler = () => {
+
+        console.log("Auth");
+        requestApi.authRequest()
+            .then(res => {
+                console.log(res.status);
+            });
+    };
+
     return (
-        <table className={s.table}>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>isAdmin?</th>
-            </tr>
-            </thead>
-            <tbody>
-            {JSX}
-            </tbody>
-        </table>
+        <>
+            <button onClick={clickHandler}>click</button>
+            <button onClick={clickAuthHandler}>auth</button>
+
+            <table className={s.table}>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>isAdmin?</th>
+                </tr>
+                </thead>
+                <tbody>
+                {JSX}
+                </tbody>
+            </table>
+        </>
     );
 };
 
