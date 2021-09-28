@@ -10,7 +10,7 @@ export const requestApi = {
         return instance.get(`/auth/`);
     },
     authLogin() {
-        return instance.post("auth/login", {email: "lergnom@mail.ru", password: "12345678", rememberMe: true});
+        return instance.post("auth/login", {email: "nya-admin@nya.nya", password: "1qazxcvBG", rememberMe: true});
     },
     authRequest() {
         return instance.post("auth/me");

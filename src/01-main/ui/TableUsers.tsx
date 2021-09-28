@@ -6,6 +6,7 @@ import {InitStateType, setUsers} from "../bll/user-reducer";
 import {SuperCheckbox} from "./common/components/SuperCheckBox/SuperCheckBox";
 import {requestApi} from "../dal/api";
 
+
 export const TableUsers = () => {
     const users = useSelector<AppStoreType, Array<InitStateType>>(state => state.users);
     const dispatch = useDispatch();
@@ -30,7 +31,8 @@ export const TableUsers = () => {
         console.log("Button");
         requestApi.authLogin()
             .then(res => {
-                console.log(res.status);
+                if (res.status === 200) {
+                }
             });
     };
 

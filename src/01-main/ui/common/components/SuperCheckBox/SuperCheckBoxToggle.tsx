@@ -5,6 +5,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 type SuperCheckboxPropsType = DefaultInputPropsType & {
     onChangeChecked?: (checked: boolean) => void
     spanClassName?: string
+    checked?: boolean
 }
 
 export const SuperCheckboxToggle: React.FC<SuperCheckboxPropsType> = (
@@ -12,7 +13,7 @@ export const SuperCheckboxToggle: React.FC<SuperCheckboxPropsType> = (
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
         onChange, onChangeChecked,
         className, spanClassName,
-        children, // в эту переменную попадёт текст, типизировать не нужно так как он затипизирован в React.FC
+        children, checked,// в эту переменную попадёт текст, типизировать не нужно так как он затипизирован в React.FC
 
         ...restProps// все остальные пропсы попадут в объект restProps
     }
@@ -26,7 +27,7 @@ export const SuperCheckboxToggle: React.FC<SuperCheckboxPropsType> = (
     };
 
     const finalInputClassName = `${s.superInput} ${className ? className : ''}`;
-
+    console.log(checked);
     return (
         <label className={s.checkbox}>
             <input
@@ -36,7 +37,7 @@ export const SuperCheckboxToggle: React.FC<SuperCheckboxPropsType> = (
 
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
             />
-            <span className={s.checkboxSwitch}></span>
+            <span className={!checked ? s.checkboxSwitch :s.checkboxSwitchChecked}></span>
             {children && <span className={s.spanClassName}>{children}</span>}
         </label> // благодаря label нажатие на спан передастся в инпут
     );

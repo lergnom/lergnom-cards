@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./styles.module.css";
 import {SuperCheckbox} from "./SuperCheckBox/SuperCheckBox";
+import {SuperCheckboxToggle} from "./SuperCheckBox/SuperCheckBoxToggle";
 
 
 export const Checkboxs = () => {
+    const [check, setCheck] = useState<boolean>(false);
     return (
         <>
             <ul className={s.ulWrapper}>
@@ -15,9 +17,11 @@ export const Checkboxs = () => {
                     <SuperCheckbox checked={false}>unchecked</SuperCheckbox>
                 </li>
 
-                {/*<li>*/}
-                {/*  Недоработанная компонента  <SuperCheckboxToggle checked>toggle</SuperCheckboxToggle> */}
-                {/*</li>*/}
+                <li>
+                    <SuperCheckboxToggle onChangeChecked={() => {
+                        setCheck(!check);
+                    }} checked={check}>toggle</SuperCheckboxToggle>
+                </li>
             </ul>
         </>
     );
