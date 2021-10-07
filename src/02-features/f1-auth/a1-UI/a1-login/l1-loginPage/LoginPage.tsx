@@ -22,6 +22,8 @@ export const LoginPage = (
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [rememberMe, setRememberMe] = useState<boolean>(false);
+    const errorEmail = email ? '' : 'add your email';
+    const errorPassword = password ? '' : 'add your password';
 
     const changeCheckedOnRemember = (e: React.ChangeEvent<HTMLInputElement>) => {
         setRememberMe(e.currentTarget.checked);
@@ -54,7 +56,7 @@ export const LoginPage = (
                         <div className={s.formStyle}>
                             <label className={s.formLabel}>Login: </label>
                             <SuperInput value={email} onChangeText={setEmail} onClick={resetErrors}
-                                        disabled={isFetching}
+                                        disabled={isFetching} error={errorEmail}
                             />
                         </div>
 
@@ -66,7 +68,7 @@ export const LoginPage = (
                                         onChangeText={setPassword}
                                         onClick={resetErrors}
                                         disabled={isFetching}
-
+                                        error={errorPassword}
                             />
                         </div>
                         <div className={s.formStyle}>
