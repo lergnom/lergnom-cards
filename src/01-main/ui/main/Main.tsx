@@ -8,7 +8,6 @@ export const Main = () => {
 
     return (
         <>
-//comment
             <HashRouter>
                 <Header/>
                 <Routes/>

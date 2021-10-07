@@ -3,7 +3,7 @@ import s from "./TableUsers.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../bll/store";
 import {InitStateType, setUsers} from "../bll/user-reducer";
-import {SuperCheckbox} from "./common/components/SuperCheckBox/SuperCheckBox";
+import {SuperCheckbox} from "../../common/components/SuperCheckBox/SuperCheckBox";
 import {requestApi} from "../dal/api";
 
 

@@ -57,3 +57,19 @@
 }
 
 
+.eye {
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 15px;
+    top: 60%;
+    right: 15px;
+    background-color: yellow;
+    /*    display: inline-block;*/
+    background: url(/src/common/img/icons/close_eye.png) 0 0 no-repeat;
+}
+
+.eye:hover {
+    background: url(/src/common/img/icons/open_eye.png) 0 0 no-repeat;
+
+}

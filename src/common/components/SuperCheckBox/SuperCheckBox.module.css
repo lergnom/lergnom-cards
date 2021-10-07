@@ -36,7 +36,7 @@
     margin: auto;
     width: 15px;
     height: 12px;
-    background-image: url(/src/01-main/ui/common/img/icons/check-solid.svg);
+    background-image: url(/src/common/img/icons/check-solid.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

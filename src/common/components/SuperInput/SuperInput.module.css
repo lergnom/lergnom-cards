@@ -3,6 +3,7 @@
 }
 
 .superInput {
+    position: relative;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -12,7 +13,7 @@
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 3px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -38,4 +39,24 @@
     font-weight: 700;
     line-height: 1.5;
     color: red;
+}
+
+.inputEyeWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.eye {
+    cursor: pointer;
+    margin-left: 5px;
+    width: 25px;
+    height: 15px;
+    background-color: yellow;
+    /*    display: inline-block;*/
+    background: url(/src/common/img/icons/close_eye.png) 0 0 no-repeat;
+}
+
+.eye:hover {
+    background: url(/src/common/img/icons/open_eye.png) 0 0 no-repeat;
+
 }

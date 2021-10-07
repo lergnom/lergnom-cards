@@ -7,9 +7,6 @@ const App = () => {
     return (
         <div className="App">
             <Main/>
-
-            {/*//hr,prov*/}
-            {/*<Main/> - navlinks*/}
         </div>
     );
 
