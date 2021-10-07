@@ -2,25 +2,43 @@ import React, {useState} from "react";
 import s from "./LoginPage.module.css";
 import {SuperInput} from "../../../../../common/components/SuperInput/SuperInput";
 import SuperButton from "../../../../../common/components/SuperButton/SuperButton";
+import {ToggleCheckBox} from "../../../../../common/components/CheckBoxToggle/ToggleCheckBox";
 
-export const LoginPage = () => {
+type LoginPageTypeProps = {
+    serverError: Array<string>
+    isFetching: boolean
+    resetErrors: () => void
+    onSubmitHandler: (email: string, password: string, rememberMe: boolean) => void
+}
 
+export const LoginPage = (
+    {
+        serverError,
+        isFetching,
+        resetErrors,
+        onSubmitHandler,
+    }: LoginPageTypeProps) => {
 
-    const [pass, setPass] = useState<string>('');
-    const [login, setLogin] = useState<string>('');
-    // const isFetching = useSelector<AppStoreType, boolean>(state => state.register.isFetch);
-    const isFetching = false;
+    const [password, setPassword] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [rememberMe, setRememberMe] = useState<boolean>(false);
 
-
-    //Define error on the form
-    let error: Array<string>;
-    const errorLogin = login ? '' : 'add your email';
-    const errorPass = pass ? '' : 'add your password';
-
-    const resetErrors = () => {
-        // dispatch(returnServerError([]));
+    const changeCheckedOnRemember = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setRememberMe(e.currentTarget.checked);
     };
 
+
+    const sendUpDataFromForm = () => {
+        onSubmitHandler(email, password, rememberMe);
+    };
+
+    const errorsJSX = serverError.map(err => {
+        return (
+            <li key={err}>
+                {err}
+            </li>
+        );
+    });
 
     return (
         <>
@@ -31,29 +49,48 @@ export const LoginPage = () => {
                             <span>Login</span> page
                         </p>
                     </div>
-                    <div className={s.pageHr}></div>
+                    <div className={s.pageHr}/>
                     <form>
                         <div className={s.formStyle}>
                             <label className={s.formLabel}>Login: </label>
-                            <SuperInput/>
+                            <SuperInput value={email} onChangeText={setEmail} onClick={resetErrors}
+                                        disabled={isFetching}
+                            />
                         </div>
 
                         <div className={s.formStyle}>
                             <label className={s.formLabel}>Repeat Password: </label>
                             {/*<SuperInput changeType="password"/>*/}
                             <SuperInput changeType={'password'}
-                                        value={pass}
-                                        onChangeText={setPass}
-                                        error={errorPass}
+                                        value={password}
+                                        onChangeText={setPassword}
                                         onClick={resetErrors}
-                                        disabled={isFetching}/>
+                                        disabled={isFetching}
+
+                            />
+                        </div>
+                        <div className={s.formStyle}>
+                            <div className={s.flexLine}>
+                                <label className={s.formLabel}>Remember Me: </label>
+                                <ToggleCheckBox colorBackround="#2d93f0" title={"rememberMe :)"}
+                                                checked={rememberMe} onChange={changeCheckedOnRemember}/>
+                            </div>
+
                         </div>
 
                         <div className={s.formStyle}>
-                            <SuperButton btnPrimary>
+                            <ul>
+                                {errorsJSX}
+                            </ul>
+                        </div>
+
+
+                        <div className={s.formStyle}>
+                            <SuperButton btnPrimary onClick={sendUpDataFromForm}>
                                 LogIn
                             </SuperButton>
                         </div>
+
 
                     </form>
 

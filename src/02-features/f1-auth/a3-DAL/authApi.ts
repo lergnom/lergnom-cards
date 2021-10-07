@@ -14,7 +14,8 @@ export type ResponseType<D = {}> = {
 }
 
 export enum StatusCode {
-    success = 201,
+    success201 = 201,
+    success200 = 200,
     fail = 400
 }
 
@@ -56,7 +57,8 @@ export type UserType = {
 
 export const authAPI = {
     loginUser(payload: { email: string, password: string, rememberMe: boolean }) {
-        return instance.post<ResponseType<UserType>>("auth/login", payload);
+        return instance.post<ResponseType<UserType>>("auth/login", payload).then(res => res
+        ).catch(rej => rej.response);
     },
     registerUser(payload: { email: string, passord: string }) {
         return instance.post<ResponseType<AddedUserType | ErrorType>>(`auth/register`, payload)
