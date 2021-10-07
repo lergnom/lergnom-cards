@@ -1,20 +1,37 @@
-type AppReducerType = {
-    initialized: boolean,
-}
-let initialState: AppReducerType = {
-    initialized: false,
+import {Action} from "redux";
+import {ThunkAction} from "redux-thunk";
+import {AppStoreType} from "../../../01-main/bll/store";
+import {UserType} from "../a3-DAL/authApi";
+
+let initialState = {
+    user: null as null | UserType,
+    isFetch: false,
+    error: [] as Array<string>,
 };
 
-type ActionTypes = InitializedSuccessType
+type AuthReducerType = typeof initialState
+type ActionTypes = authUserActionType | fetchOnServerActionType | returnServerErrorActionType
 
-export const authReducer = (state: AppReducerType = initialState, action: ActionTypes): AppReducerType => {
+export type ThunkType<TActions extends Action> = ThunkAction<Promise<void>,
+    AppStoreType,
+    unknown,
+    TActions>
+
+export const authReducer = (state: AuthReducerType = initialState, action: ActionTypes): AuthReducerType => {
     switch (action.type) {
         default:
             return {...state};
     }
 };
 
-type InitializedSuccessType = ReturnType<typeof initializedSuccess>;
-//action creator
-const initializedSuccess = () => ({type: 'INITIALIZED-SUCCESS'}) as const;
+// actions
+export const authUser = (user: UserType | null) => ({type: "SIGN-IN/AUTH-USER", user} as const);
+const fetchOnServer = (fetch: boolean) => ({type: "SIGN-IN/LOADER", fetch} as const);
+export const returnServerError = (error: Array<string>) => ({type: "SIGN-UP/SERVER_ERROR", error} as const);
+
+//actions types
+type authUserActionType = ReturnType<typeof authUser>
+type fetchOnServerActionType = ReturnType<typeof fetchOnServer>
+type returnServerErrorActionType = ReturnType<typeof returnServerError>
+
 //thunk
