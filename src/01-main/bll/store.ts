@@ -2,10 +2,12 @@ import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk";
 import {userReducer} from "./user-reducer";
 import {appReducer} from "../../02-features/00-initialize/app-reducer";
+import {authReducer} from "../../02-features/f1-auth/a2-BLL/auth-reducer";
 
 const rootReducer = combineReducers({
     users: userReducer,
-    app:appReducer
+    app: appReducer,
+    auth: authReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
