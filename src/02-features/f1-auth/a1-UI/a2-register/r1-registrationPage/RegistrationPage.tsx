@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import SuperButton from "../../../../../common/components/SuperButton/SuperButton";
-import {SuperInput} from "../../../../../common/components/SuperInput/SuperInput";
+import SuperButton from "../../../../../03-common/components/SuperButton/SuperButton";
+import {SuperInput} from "../../../../../03-common/components/SuperInput/SuperInput";
 import s from "./RegistrationPage.module.css";
 
 export const RegistrationPage = () => {

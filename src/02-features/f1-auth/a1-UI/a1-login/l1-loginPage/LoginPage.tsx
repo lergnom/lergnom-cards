@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import s from "./LoginPage.module.css";
-import {SuperInput} from "../../../../../common/components/SuperInput/SuperInput";
-import SuperButton from "../../../../../common/components/SuperButton/SuperButton";
-import {ToggleCheckBox} from "../../../../../common/components/CheckBoxToggle/ToggleCheckBox";
+import {SuperInput} from "../../../../../03-common/components/SuperInput/SuperInput";
+import SuperButton from "../../../../../03-common/components/SuperButton/SuperButton";
+import {ToggleCheckBox} from "../../../../../03-common/components/CheckBoxToggle/ToggleCheckBox";
 
 type LoginPageTypeProps = {
     serverError: Array<string>

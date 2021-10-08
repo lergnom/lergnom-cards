@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../../../01-main/bll/store";
 import {requestOnUserLogin, returnServerError} from "../../../a2-BLL/auth-reducer";
 import {LoginPage} from "./LoginPage";
-import {PreLoader} from "../../../../../common/components/PreLoader/PreLoader";
+import {PreLoader} from "../../../../../03-common/components/PreLoader/PreLoader";
 import {UserType} from "../../../a3-DAL/authApi";
 import {Redirect} from "react-router-dom";
 import {PATH} from "../../../../../01-main/ui/routes/Routes";
