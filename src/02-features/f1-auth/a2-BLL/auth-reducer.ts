@@ -84,3 +84,32 @@ export const checkUserIsAuth = (): ThunkType<fetchOnServerActionType | authUserA
         dispatch(fetchOnServer(false));
     }
 };
+
+export const requestOnLogoutUser = (): ThunkType<fetchOnServerActionType | authUserActionType> => async (dispatch) => {
+    try {
+        dispatch(fetchOnServer(true));
+        await authAPI.logoutUser();
+        dispatch(authUser(null));
+    } catch (e) {
+        console.log(e);
+    } finally {
+        dispatch(fetchOnServer(false));
+    }
+
+};
+
+
+// export const logoutThunk = (dispatch: Dispatch) => {
+//     dispatch(setLoading(true));
+//     profileAPI.logout()
+//         .then(() => {
+//             dispatch(setAuth(false));
+//             dispatch(authUserAC(null));
+//         })
+//         .catch(error => {
+//             dispatch(setError(error.response.data.error));
+//             console.log(error.response.data.error);
+//         })
+//         .finally(() => dispatch(setLoading(false)));
+// };
+

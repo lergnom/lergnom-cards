@@ -8,6 +8,7 @@
     color: #fff;
     position: fixed;
     z-index: 1;
+    cursor: default;
 }
 
 .logo {
@@ -106,6 +107,7 @@ img {
     border-radius: 80px 0px 0px 80px;
     transition: 100ms all ease-out;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
