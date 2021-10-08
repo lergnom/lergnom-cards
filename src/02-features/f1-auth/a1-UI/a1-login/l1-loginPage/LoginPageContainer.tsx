@@ -3,11 +3,17 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../../../01-main/bll/store";
 import {requestOnUserLogin, returnServerError} from "../../../a2-BLL/auth-reducer";
 import {LoginPage} from "./LoginPage";
+import {PreLoader} from "../../../../../common/components/PreLoader/PreLoader";
+import {UserType} from "../../../a3-DAL/authApi";
+import {Redirect} from "react-router-dom";
+import {PATH} from "../../../../../01-main/ui/routes/Routes";
 
 export const LoginPageContainer: React.FC = () => {
     let error: Array<string>;
     const isFetching = useSelector<AppStoreType, boolean>(state => state.auth.isFetch);
     const serverError = useSelector<AppStoreType, Array<string>>(state => state.auth.error);
+    const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
+    const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
     const dispatch = useDispatch();
 
     const resetErrors = () => {
@@ -25,10 +31,18 @@ export const LoginPageContainer: React.FC = () => {
         }
     };
 
+    if (user && isInitialized) {
+        return <Redirect to={PATH.PROFILE_PAGE}/>;
+    }
+
+
     return (
         <>
+            {isFetching && <PreLoader/>}
             <LoginPage isFetching={isFetching} onSubmitHandler={formHandler} resetErrors={resetErrors}
                        serverError={serverError}/>
+
+
         </>
     );
 };

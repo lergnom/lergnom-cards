@@ -70,3 +70,17 @@ export const requestOnUserLogin = (payload: LoginData): ThunkType<fetchOnServerA
             }
         );
 };
+
+
+export const checkUserIsAuth = (): ThunkType<fetchOnServerActionType | authUserActionType> => async (dispatch) => {
+    try {
+        dispatch(fetchOnServer(true));
+        const response = await authAPI.authUser();
+        dispatch(authUser(response.data));
+        dispatch(fetchOnServer(false));
+    } catch (err) {
+        console.log('checkUserisAuth', err);
+    } finally {
+        dispatch(fetchOnServer(false));
+    }
+};

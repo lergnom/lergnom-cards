@@ -4,11 +4,11 @@ import {Buttons} from "../../../common/components/Buttons";
 import {Checkboxs} from "../../../common/components/Checkboxs";
 import {Inputs} from "../../../common/components/Inputs";
 import {RegistrationPage} from "../../../02-features/f1-auth/a1-UI/a2-register/r1-registrationPage/RegistrationPage";
-import {Profile} from "../../../02-features/f1-auth/a1-UI/a3-profile/Profile";
 import {PasswordRecovery} from "../../../02-features/f1-auth/a1-UI/a4-passwordRecovery/PasswordRecovery";
 import {PageNotFound} from "../../../02-features/f1-auth/a1-UI/a5-pageNotFound/PageNotFound";
 import {TableUsers} from "../TableUsers";
 import {LoginPageContainer} from "../../../02-features/f1-auth/a1-UI/a1-login/l1-loginPage/LoginPageContainer";
+import {ProfileContainer} from "../../../02-features/f1-auth/a1-UI/a3-profile/ProfileContainer";
 
 export const PATH = {
     HOME: '/',
@@ -33,7 +33,7 @@ export const Routes = () => {
                 <Route path={PATH.SUPER_INPUT} render={() => <Inputs/>}/>
                 <Route path={PATH.LOGIN_PAGE} render={() => <LoginPageContainer/>}/>
                 <Route path={PATH.LOGIN_SIGN_UP} render={() => <RegistrationPage/>}/>
-                <Route path={PATH.PROFILE_PAGE} render={() => <Profile/>}/>
+                <Route path={PATH.PROFILE_PAGE} render={() => <ProfileContainer/>}/>
                 <Route path={PATH.PASSWORD_RECOVERY_PAGE} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PAGE_NOT_FOUND} render={() => <PageNotFound/>}/>
                 <Route path={PATH.TABLE_USER} render={() => <TableUsers/>}/>

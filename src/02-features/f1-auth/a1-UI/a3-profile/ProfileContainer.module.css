@@ -1,0 +1,54 @@
+.leftPanel {
+    background-color: #094071;
+    width: 300px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    position: fixed;
+    z-index: 1;
+}
+
+.logo {
+    padding: 30px;
+    border-bottom: 1px solid #14497a;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #8AACCE;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.userWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 46px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #14497a;
+}
+
+.userPhoto {
+    background: aquamarine;
+    width: 56px;
+    height: 56px;
+    border-radius: 80px;
+    overflow: hidden;
+}
+
+.userName {
+    margin-left: 15px;
+}

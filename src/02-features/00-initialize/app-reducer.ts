@@ -1,4 +1,5 @@
 import {Dispatch} from "redux";
+import {checkUserIsAuth} from "../f1-auth/a2-BLL/auth-reducer";
 
 type AppReducerType = {
     initialized: boolean,
@@ -23,7 +24,7 @@ type InitializedSuccessType = ReturnType<typeof initializedSuccess>;
 const initializedSuccess = () => ({type: 'INITIALIZED-SUCCESS'}) as const;
 //thunk
 export const initializeApp = () => (dispatch: Dispatch<any>) => {
-    // Promise.all([dispatch(checkUserIsAuth())]).then(() => {
-    //     dispatch(initializedSuccess());
-    // });
+    Promise.all([dispatch(checkUserIsAuth())]).then(() => {
+        dispatch(initializedSuccess());
+    });
 };

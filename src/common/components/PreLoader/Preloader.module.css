@@ -1,0 +1,15 @@
+.preloadWrapper svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+    color: #e74c3c;
+}
+
+.preloadWrapper {
+    position: sticky;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
