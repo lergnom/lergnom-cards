@@ -9,6 +9,9 @@ import {PreLoader} from "../../../03-common/components/PreLoader/PreLoader";
 import { Redirect } from "react-router-dom";
 import {PATH} from "../../../01-main/ui/routes/Routes";
 import s from "./PacksList.module.css"
+import { ToggleCheckBox } from "../../../03-common/components/CheckBoxToggle/ToggleCheckBox";
+import {MySelect} from "../../../03-common/components/Select/MySelect";
+import {Pagination} from "../../../03-common/components/Pagination/Pagination";
 
 export const PackListContainer: React.FC = () => {
     const [searchPackName, setSearchPackName] = useState<string>('');
@@ -109,18 +112,18 @@ export const PackListContainer: React.FC = () => {
                         <span style={{marginRight: "5px"}}>My Packs</span>
                         <ToggleCheckBox title={"Show me my packs... quickly :)"} onChange={changeCheckedMyPacks} checked={myPacks}/>
                     </div>
-                    <div style={{marginTop: "5px"}}>Number of cards <CustomRange getMin={getRangeMin}
-                                                                                 getMax={getRangeMax}/></div>
+                    {/*<div style={{marginTop: "5px"}}>Number of cards <CustomRange getMin={getRangeMin}
+                                                                                 getMax={getRangeMax}/></div>*/}
                 </div>
                 <div>
-                    <InputText value={searchPackName} onChangeText={setSearchPackName}
-                               label={"Search by Pack Name   🔍"}/>
+                 {/*   <Input value={searchPackName} onChangeText={setSearchPackName}
+                               label={"Search by Pack Name   🔍"}/>*/}
                 </div>
-                <div><AddCardPackModalContainer buttonTitle={"Add Pack"} title={"Open modal window for add new PackCard"}/></div>
+                {/*<div><AddCardPackModalContainer buttonTitle={"Add Pack"} title={"Open modal window for add new PackCard"}/></div>*/}
             </div>
             <div className={s.packListTableWrapper}>
-                <Table tableHeaders={tableHeaders}
-                       tableBody={<TableBodyForCardPacks myId={myId} cardPacks={cardPacks}/>}/>
+          {/*      <Table tableHeaders={tableHeaders}
+                       tableBody={<TableBodyForCardPacks myId={myId} cardPacks={cardPacks}/>}/>*/}
             </div>
 
             <div className={s.packsListFooterWrapper}>
@@ -130,7 +133,7 @@ export const PackListContainer: React.FC = () => {
                     Show
                     <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
                     Cards per Page
-                </div>
+                </div>Select
             </div>
         </>
     );
