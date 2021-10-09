@@ -1,0 +1,35 @@
+.packsListFooterWrapper {
+    display: flex;
+    width: 1200px;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.packsListHeaderWrapper {
+    display: flex;
+    width: 1200px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 15px 0;
+
+}
+
+
+.packListPageSelector {
+    margin-left: 50px;
+}
+
+.packListPageSelector select {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.packListTableWrapper button {
+    width: 60px;
+    height: 25px;
+    margin: 0 5px;
+}
