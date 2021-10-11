@@ -31,18 +31,7 @@ export const Profile: React.FC<ProfileTypeProps> = ({title, subtitle, avatar, us
                     SORT & SEARCH:
                 </div>
                 {children}
-                {/*<ul>*/}
-                {/*    <li><a href="all" data-item="all" className="left-menu active">Мои</a></li>*/}
-                {/*    <li><a href="new" data-item="new" className="left-menu">Новый*/}
-                {/*        <div className={s.badge}>7</div>*/}
-                {/*    </a></li>*/}
-                {/*    <li><a href="work" data-item="work" className="left-menu">В работе</a></li>*/}
-                {/*    <li><a href="final" data-item="final" className="left-menu">Завершенный</a></li>*/}
-                {/*    <li><a href="arc" data-item="arc" className="left-menu">Архив</a></li>*/}
-                {/*</ul>*/}
             </div>
-
-
         </div>
     );
 };

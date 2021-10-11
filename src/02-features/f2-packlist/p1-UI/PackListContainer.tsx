@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from "react";
-import {useDispatch, useSelector } from "react-redux";
-import { AppStoreType } from "../../../01-main/bll/store";
-import { UserType } from "../../f1-auth/a3-DAL/authApi";
-import { CardPack } from "../p3-DAL/packListApi";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "../../../01-main/bll/store";
+import {UserType} from "../../f1-auth/a3-DAL/authApi";
+import {CardPack} from "../p3-DAL/packListApi";
 import {HeaderOptionType, Table} from "../../../03-common/components/Table/Table";
 import useDebounce from "../../../03-common/helpers/Debounce";
 import {PreLoader} from "../../../03-common/components/PreLoader/PreLoader";
-import { Redirect } from "react-router-dom";
-import {PATH} from "../../../01-main/ui/routes/Routes";
-import s from "./PacksList.module.css"
-import { ToggleCheckBox } from "../../../03-common/components/CheckBoxToggle/ToggleCheckBox";
+import s from "./PacksList.module.css";
 import {MySelect} from "../../../03-common/components/Select/MySelect";
 import {Pagination} from "../../../03-common/components/Pagination/Pagination";
+import {TableBodyForCardPacks} from "./TableBodyForCardPacks";
+import {getPacksCards, setPage, setPageCount} from "../p2-BLL/packList-reducer";
 
 export const PackListContainer: React.FC = () => {
     const [searchPackName, setSearchPackName] = useState<string>('');
@@ -70,69 +69,33 @@ export const PackListContainer: React.FC = () => {
 
 
     useEffect(() => {
-        // dispatch(getPacksCards(debouncedSearchPackName, sortPack));
+        dispatch(getPacksCards(debouncedSearchPackName, sortPack));
     }, [page, pageCount, debouncedSearchPackName, dispatch, myPacks, sortPack]);
 
     //Change pageCount (selector options)
     const clickHandlerPageCount = (count: string) => {
-        // dispatch(setPageCount(+count));
+        dispatch(setPageCount(+count));
     };
 
     const clickHandlerChangePage = (page: number) => {
-        // dispatch(setPage(page));
+        dispatch(setPage(page));
     };
 
-
-    const changeCheckedMyPacks = (e: React.ChangeEvent<HTMLInputElement>) => {
-        // dispatch(getMyPacksCards(e.currentTarget.checked));
-    };
-
-    const getRangeMin = (min: number) => {
-        // dispatch(getMinCountPackCard(min));
-
-    };
-    const getRangeMax = (max: number) => {
-        // dispatch(getMaxCountPackCard(max));
-    };
-
-    if (!isInitialized) {
-        return <PreLoader/>;
-    }
-    if (!user) {
-        return <Redirect to={PATH.LOGIN_PAGE}/>;
-    }
 
     return (
         <>
-            <h1>Packs list</h1>
+            <h1 style={{textAlign: "center"}}>Колоды</h1>
             <div className={s.packsListHeaderWrapper}>
                 {isFetching && <PreLoader/>}
-                <div>
-                    <div>
-                        <span style={{marginRight: "5px"}}>My Packs</span>
-                        <ToggleCheckBox title={"Show me my packs... quickly :)"} onChange={changeCheckedMyPacks} checked={myPacks}/>
-                    </div>
-                    {/*<div style={{marginTop: "5px"}}>Number of cards <CustomRange getMin={getRangeMin}
-                                                                                 getMax={getRangeMax}/></div>*/}
-                </div>
-                <div>
-                 {/*   <Input value={searchPackName} onChangeText={setSearchPackName}
-                               label={"Search by Pack Name   🔍"}/>*/}
-                </div>
-                {/*<div><AddCardPackModalContainer buttonTitle={"Add Pack"} title={"Open modal window for add new PackCard"}/></div>*/}
             </div>
-            <div className={s.packListTableWrapper}>
-                <Table tableHeaders={tableHeaders} />
-            </div>
+            <Table tableHeaders={tableHeaders} tableBody={<TableBodyForCardPacks myId={myId} cardPacks={cardPacks}/>}/>
 
             <div className={s.packsListFooterWrapper}>
                 <Pagination totalCount={cardPacksTotalCount} count={pageCount} page={page}
                             onChangePage={clickHandlerChangePage}/>
-                <div className={s.packListPageSelector}>
-                    Show
-                    <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
-                    Cards per Page
-                </div>Select
+                Show
+                <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
+                Cards per Page
             </div>
         </>
     );

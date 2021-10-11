@@ -1,14 +1,13 @@
 .packsListFooterWrapper {
     display: flex;
-    width: 1200px;
     justify-content: flex-start;
-    align-items: center;
 
 }
 
 .packsListHeaderWrapper {
     display: flex;
-    width: 1200px;
+    width: 100%;
+    /*width: 1200px;*/
     justify-content: space-evenly;
     align-items: center;
     margin: 15px 0;

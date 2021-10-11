@@ -32,7 +32,6 @@ export const Table = ({tableHeaders, tableBody}: TableTypeProps) => {
                 </thead>
                 <tbody>
                 {tableBody}
-                {/*{bodyTableJSX}*/}
                 </tbody>
             </table>
         </>

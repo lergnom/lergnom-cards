@@ -12,38 +12,36 @@ import {PackListContainer} from "../../../f2-packlist/p1-UI/PackListContainer";
 
 export const ProfileContainer: React.FC = () => {
     const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
+    const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
     const dispatch = useDispatch();
-
     const onLogoutHandler = () => dispatch(requestOnLogoutUser());
-
-
     const [myPack, setMyPack] = useState<boolean>(false);
     const changeCheckedMyPacks = (e: React.ChangeEvent<HTMLInputElement>) => {
         // dispatch(getMyPacksCards(e.currentTarget.checked));
         setMyPack(e.currentTarget.checked);
     };
 
-    if (!user) return <Redirect to={PATH.LOGIN_PAGE}/>;
+
+    if (!user && isInitialized) return <Redirect to={PATH.LOGIN_PAGE}/>;
     return (
         <>
-            <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar} userName={user?.name}>
-                <ul>
-                    <li><span style={{marginRight: "5px"}}>My Packs</span><ToggleCheckBox
-                        title={"Show me my packs... quickly :)"} onChange={changeCheckedMyPacks}
-                        checked={myPack}/>
-                    </li>
-                    <li><a onClick={onLogoutHandler}>Выход</a></li>
-                </ul>
-            </Profile>
+            <div className={s.container}>
 
+                <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar}
+                         userName={user?.name}>
+                    <ul>
+                        <li><span style={{marginRight: "5px"}}>My Packs</span><ToggleCheckBox
+                            title={"Show me my packs... quickly :)"} onChange={changeCheckedMyPacks}
+                            checked={myPack}/>
+                        </li>
+                        <li><a onClick={onLogoutHandler}>Выход</a></li>
+                    </ul>
+                </Profile>
 
-            <div className={s.mainWrapper}>
-                <div>
-                    <PackListContainer/>
+                <div className={s.rightSide}>
+                        <PackListContainer/>
                 </div>
             </div>
-
-
         </>
     );
 };
