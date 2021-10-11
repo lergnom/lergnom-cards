@@ -12,8 +12,12 @@ import {Pagination} from "../../../03-common/components/Pagination/Pagination";
 import {TableBodyForCardPacks} from "./TableBodyForCardPacks";
 import {getPacksCards, setPage, setPageCount} from "../p2-BLL/packList-reducer";
 
-export const PackListContainer: React.FC = () => {
-    const [searchPackName, setSearchPackName] = useState<string>('');
+type PackListContainerTypeProps = {
+    searchName:string
+}
+
+export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchName}) => {
+    // const [searchPackName, setSearchPackName] = useState<string>('');
     const [sortPack, setSortPack] = useState<string>("");
 
     //for show my Packs
@@ -59,18 +63,13 @@ export const PackListContainer: React.FC = () => {
 
 
     // useDebounce hook for delay searchPackName
-    const debouncedSearchPackName = useDebounce(searchPackName, 1000);
-    useEffect(() => {
-        if (debouncedSearchPackName) {
-            setSearchPackName(debouncedSearchPackName);
-        }
-    }, [debouncedSearchPackName]);
+
     // Example with Lodash // const searchPaymentByLastName = useCallback(debounce((value: string) => { dispatch(getInitialPayments({lastName: value})) }, 500),[])
 
 
     useEffect(() => {
-        dispatch(getPacksCards(debouncedSearchPackName, sortPack));
-    }, [page, pageCount, debouncedSearchPackName, dispatch, myPacks, sortPack]);
+        dispatch(getPacksCards(searchName, sortPack));
+    }, [page, pageCount, searchName, dispatch, myPacks, sortPack]);
 
     //Change pageCount (selector options)
     const clickHandlerPageCount = (count: string) => {
