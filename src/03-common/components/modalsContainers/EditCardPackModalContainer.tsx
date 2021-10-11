@@ -56,10 +56,10 @@ export const EditCardPackModalContainer = (
                 <SuperInput autoFocus onChange={onChangeHandlerChangeNameCardPack} value={changeNameCardPack}
                             title={"Edit PackName"}/>
                 <div>
-                    <SuperButton disabled={isButtonDisabled} onClick={() => {
+                    <SuperButton btnPrimary disabled={isButtonDisabled} onClick={() => {
                         clickHandlerEditPackById(packId);
                     }} title={"Update or not update?..."}>Update</SuperButton>
-                    <SuperButton title={"Maybe, not update..."} disabled={isButtonDisabled}
+                    <SuperButton btnSecondary title={"Maybe, not update..."} disabled={isButtonDisabled}
                                  onClick={clickHandlerHiddenModal}> No</SuperButton>
                 </div>
             </Modal>

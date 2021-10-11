@@ -37,12 +37,12 @@ export const LoginPageContainer: React.FC = () => {
 
 
     return (
-        <>
+        <div style={{display: 'flex', justifyContent: "center", marginTop: "30px"}}>
             {isFetching && <PreLoader/>}
             <LoginPage isFetching={isFetching} onSubmitHandler={formHandler} resetErrors={resetErrors}
                        serverError={serverError}/>
 
 
-        </>
+        </div>
     );
 };

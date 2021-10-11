@@ -44,10 +44,11 @@ export const DeleteCardPackModalContainer = (
                 <h1>Delete CardPack</h1>
                 Are you sure you want delete: <span>{namePack}</span>
                 <div>
-                    <SuperButton title={"After press i don't know :("} disabled={isButtonDisabled} onClick={() => {
-                        clickHandlerDeleteCardPackById(deleteId);
-                    }}>Yes</SuperButton>
-                    <SuperButton title={"Yes, yes, yes :)"} disabled={isButtonDisabled}
+                    <SuperButton btnRed title={"After press i don't know :("} disabled={isButtonDisabled}
+                                 onClick={() => {
+                                     clickHandlerDeleteCardPackById(deleteId);
+                                 }}>Yes</SuperButton>
+                    <SuperButton btnSecondary title={"Yes, yes, yes :)"} disabled={isButtonDisabled}
                                  onClick={clickHandlerHiddenModal}> No</SuperButton>
                 </div>
             </Modal>
