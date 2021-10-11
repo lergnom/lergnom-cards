@@ -16,18 +16,19 @@
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
+    margin: 0 2px;
 
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
+    /*padding: .5rem 1rem;*/
+    /*font-size: 1.25rem;*/
+    /*line-height: 1.5;*/
     border-radius: .3rem;
     cursor: pointer;
 
 }
 
 .btnPrimary:hover {
-    color: #fff;
-    background-color: #0069d9;
+    color: #007bff;
+    background-color: #fff;
     border-color: #0062cc;
 }
 
@@ -35,15 +36,36 @@
     color: #fff;
     background-color: #343a40;
     border-color: #343a40;
+    margin: 0 2px;
 
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
+    /*padding: .5rem 1rem;*/
+    /*font-size: 1.25rem;*/
+    /*line-height: 1.5;*/
     border-radius: .3rem;
 }
 
 .btnSecondary:hover {
-    color: #fff;
-    background-color: #23272b;
+    color: #23272b;
+    background-color: #fff;
     border-color: #1d2124;
+}
+
+.btnRed {
+    color: #fff;
+    background-color: #ff000a;
+    border-color: #e00007;
+    margin: 0 2px;
+
+    /*padding: .5rem 1rem;*/
+    /*font-size: 1.25rem;*/
+    /*line-height: 1.5;*/
+    border-radius: .3rem;
+    cursor: pointer;
+
+}
+
+.btnRed:hover {
+    color: #ff000a;
+    background-color: #fff;
+    border-color: #e00007;
 }

@@ -7,4 +7,9 @@
 .rightSide {
     margin-left: 10px;
     width: 100%;
+    cursor: default;
+}
+
+.rightSide button {
+    cursor: pointer;
 }

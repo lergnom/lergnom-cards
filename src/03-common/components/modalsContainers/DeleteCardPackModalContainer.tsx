@@ -38,7 +38,7 @@ export const DeleteCardPackModalContainer = (
     };
     return (
         <div className={s.wrapContainer}>
-            <SuperButton disabled={isButtonDisabled} onClick={clickHandlerShowModal}
+            <SuperButton btnRed disabled={isButtonDisabled} onClick={clickHandlerShowModal}
                          title={"Show modal for delete"}> delete</SuperButton>
             <Modal show={show} backgroundOnClick={clickHandlerHiddenModal} width={413} height={240}>
                 <h1>Delete CardPack</h1>

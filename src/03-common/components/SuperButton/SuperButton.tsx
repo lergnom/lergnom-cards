@@ -5,11 +5,13 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
     btnPrimary?: boolean,
-    btnSecondary?: boolean
+    btnSecondary?: boolean,
+    btnRed?: boolean,
+    green?: boolean,
 }
 
-const SuperButton: React.FC<SuperButtonPropsType> = ({btnPrimary, btnSecondary, className, ...restProps}) => {
-    const finalClassName = `  ${btnPrimary ? s.btnPrimary : btnSecondary ? s.btnSecondary : s.default} ${className}`;
+const SuperButton: React.FC<SuperButtonPropsType> = ({btnPrimary, btnSecondary, className, btnRed, ...restProps}) => {
+    const finalClassName = `  ${btnPrimary ? s.btnPrimary : btnSecondary ? s.btnSecondary : btnRed ? s.btnRed : s.default} ${className}`;
 
     return (
         <button

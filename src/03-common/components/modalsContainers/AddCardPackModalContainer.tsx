@@ -53,9 +53,10 @@ export const AddCardPackModalContainer = ({
             </div>
 
             <Modal show={show} backgroundOnClick={clickHandlerHiddenModal} width={413} height={240}>
-                <h1>Add new Pack</h1>
+                <h1>Добавить колоду</h1>
                 <SuperInput value={packName} onChangeText={setPackName} title={"Add new Pack Name"}/>
-                <SuperButton title={"Add new CardPack"} disabled={isButtonDisabled} onClick={clickHandlerAddNewPack}> +
+                <SuperButton btnPrimary title={"Add new CardPack"} disabled={isButtonDisabled}
+                             onClick={clickHandlerAddNewPack}> +
                     New
                     Pack</SuperButton>
             </Modal>

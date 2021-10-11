@@ -4,7 +4,6 @@ import {AppStoreType} from "../../../01-main/bll/store";
 import {UserType} from "../../f1-auth/a3-DAL/authApi";
 import {CardPack} from "../p3-DAL/packListApi";
 import {HeaderOptionType, Table} from "../../../03-common/components/Table/Table";
-import useDebounce from "../../../03-common/helpers/Debounce";
 import {PreLoader} from "../../../03-common/components/PreLoader/PreLoader";
 import s from "./PacksList.module.css";
 import {MySelect} from "../../../03-common/components/Select/MySelect";
@@ -13,13 +12,11 @@ import {TableBodyForCardPacks} from "./TableBodyForCardPacks";
 import {getPacksCards, setPage, setPageCount} from "../p2-BLL/packList-reducer";
 
 type PackListContainerTypeProps = {
-    searchName:string
+    searchName: string
 }
 
 export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchName}) => {
-    // const [searchPackName, setSearchPackName] = useState<string>('');
     const [sortPack, setSortPack] = useState<string>("");
-
     //for show my Packs
     const myPacks = useSelector<AppStoreType, boolean>(state => state.packList.myPacks);
     //for Table Body
@@ -31,7 +28,6 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
     //for Preloader
     const isFetching = useSelector<AppStoreType, boolean>(state => state.packList.isFetch);
     //for Render
-    const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
     const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
 
     const dispatch = useDispatch();
@@ -61,12 +57,6 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
     //Count cardsPacks into one page
     const optionsForSelector = [5, 10, 15];
 
-
-    // useDebounce hook for delay searchPackName
-
-    // Example with Lodash // const searchPaymentByLastName = useCallback(debounce((value: string) => { dispatch(getInitialPayments({lastName: value})) }, 500),[])
-
-
     useEffect(() => {
         dispatch(getPacksCards(searchName, sortPack));
     }, [page, pageCount, searchName, dispatch, myPacks, sortPack]);
@@ -83,7 +73,6 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
 
     return (
         <>
-            <h1 style={{textAlign: "center"}}>Колоды</h1>
             <div className={s.packsListHeaderWrapper}>
                 {isFetching && <PreLoader/>}
             </div>
@@ -92,9 +81,12 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
             <div className={s.packsListFooterWrapper}>
                 <Pagination totalCount={cardPacksTotalCount} count={pageCount} page={page}
                             onChangePage={clickHandlerChangePage}/>
-                Show
-                <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
-                Cards per Page
+                <div className={s.packListPageSelector}>
+                    Show
+                    <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
+                    Cards per Page
+                </div>
+
             </div>
         </>
     );

@@ -49,7 +49,7 @@ export const EditCardPackModalContainer = (
 
     return (
         <div className={s.wrapContainer}>
-            <SuperButton disabled={isButtonDisabled} onClick={clickHandlerShowModal}
+            <SuperButton btnSecondary disabled={isButtonDisabled} onClick={clickHandlerShowModal}
                          title={"Show modal for edit"}> edit </SuperButton>
             <Modal show={show} backgroundOnClick={clickHandlerHiddenModal} width={413} height={240}>
                 <h1>Edit CardPack name</h1>
