@@ -3,7 +3,7 @@ import {useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../01-main/bll/store";
 import { UserType } from "../../f1-auth/a3-DAL/authApi";
 import { CardPack } from "../p3-DAL/packListApi";
-import {HeaderOptionType} from "../../../03-common/components/Table/Table";
+import {HeaderOptionType, Table} from "../../../03-common/components/Table/Table";
 import useDebounce from "../../../03-common/helpers/Debounce";
 import {PreLoader} from "../../../03-common/components/PreLoader/PreLoader";
 import { Redirect } from "react-router-dom";
@@ -122,8 +122,7 @@ export const PackListContainer: React.FC = () => {
                 {/*<div><AddCardPackModalContainer buttonTitle={"Add Pack"} title={"Open modal window for add new PackCard"}/></div>*/}
             </div>
             <div className={s.packListTableWrapper}>
-          {/*      <Table tableHeaders={tableHeaders}
-                       tableBody={<TableBodyForCardPacks myId={myId} cardPacks={cardPacks}/>}/>*/}
+                <Table tableHeaders={tableHeaders} />
             </div>
 
             <div className={s.packsListFooterWrapper}>
