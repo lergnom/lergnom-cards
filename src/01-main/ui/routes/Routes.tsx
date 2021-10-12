@@ -8,7 +8,7 @@ import {PasswordRecovery} from "../../../02-features/f1-auth/a1-UI/a4-passwordRe
 import {PageNotFound} from "../../../02-features/f1-auth/a1-UI/a5-pageNotFound/PageNotFound";
 import {LoginPageContainer} from "../../../02-features/f1-auth/a1-UI/a1-login/l1-loginPage/LoginPageContainer";
 import {ProfileContainer} from "../../../02-features/f1-auth/a1-UI/a3-profile/ProfileContainer";
-import {LearnContainer} from "../../../02-features/f4-Learn/l1-UI/LearnContainer";
+import {LearnContainer} from "../../../02-features/f3-Learn/l1-UI/LearnContainer";
 
 export const PATH = {
     HOME: '/',

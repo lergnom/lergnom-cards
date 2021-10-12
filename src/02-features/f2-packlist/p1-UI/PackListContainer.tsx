@@ -44,15 +44,15 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
 
     // Data for Header Table
     const tableHeaders: Array<HeaderOptionType> = [
-        {headerTitle: 'Name',},
-        {headerTitle: "Cards"},
+        {headerTitle: 'Название',},
+        {headerTitle: "Кол-во карт"},
         {
-            headerTitle: "Last Updated",
+            headerTitle: "Последнее обновление",
             link: '⬇⬆',
             onClick: clickHandlerForSortUpdate
         },
-        {headerTitle: "Created by"},
-        {headerTitle: "Actions"}];
+        {headerTitle: "Создатель"},
+        {headerTitle: "Действия"}];
 
     //Count cardsPacks into one page
     const optionsForSelector = [5, 10, 15];
@@ -82,9 +82,9 @@ export const PackListContainer: React.FC<PackListContainerTypeProps> = ({searchN
                 <Pagination totalCount={cardPacksTotalCount} count={pageCount} page={page}
                             onChangePage={clickHandlerChangePage}/>
                 <div className={s.packListPageSelector}>
-                    Show
+                    Показывать
                     <MySelect options={optionsForSelector} onChangeCountCards={clickHandlerPageCount}/>
-                    Cards per Page
+                    колод на странице
                 </div>
 
             </div>

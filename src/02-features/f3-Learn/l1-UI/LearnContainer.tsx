@@ -5,9 +5,9 @@ import s from "./LearnContainer.module.css";
 import {getQuestions, getQuestionsAfterAnswer, setNewQuestNumber} from "../l2-BLL/learn-reducer";
 import {CardType} from "../l3-DAL/learnApi";
 import {Question} from "./Question/Question";
-import { AppStoreType } from "../../../01-main/bll/store";
+import {AppStoreType} from "../../../01-main/bll/store";
 import {UserType} from "../../f1-auth/a3-DAL/authApi";
-import { PATH } from "../../../01-main/ui/routes/Routes";
+import {PATH} from "../../../01-main/ui/routes/Routes";
 import {PreLoader} from "../../../03-common/components/PreLoader/PreLoader";
 import SuperButton from "../../../03-common/components/SuperButton/SuperButton";
 
@@ -52,7 +52,7 @@ export const LearnContainer = () => {
                 {questions.length <= 0 &&
                 <div>
                     <div style={{marginBottom: "10px"}}>Voprosov bolshe net. V otvet ne slblshno....</div>
-                    <Link to={PATH.PROFILE_PAGE}><SuperButton>Back</SuperButton></Link>
+                    <Link to={PATH.PROFILE_PAGE}><SuperButton btnSecondary>Back</SuperButton></Link>
                 </div>}
             </div>
         </>

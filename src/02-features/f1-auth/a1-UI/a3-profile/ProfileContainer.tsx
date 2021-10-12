@@ -43,7 +43,7 @@ export const ProfileContainer: React.FC = () => {
                 <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar}
                          userName={user?.name}>
                     <ul>
-                        <li><span style={{marginRight: "5px"}}>My Packs</span><ToggleCheckBox
+                        <li><span style={{marginRight: "5px"}}>Мои</span><ToggleCheckBox
                             title={"Show me my packs... quickly :)"} onChange={changeCheckedMyPacks}
                             checked={myPack}/>
                         </li>
@@ -53,7 +53,7 @@ export const ProfileContainer: React.FC = () => {
                                         title={"Search by Pack Name   🔍"}/>
                         </li>
                         <li><AddCardPackModalContainer buttonTitle={"Добавить новую колоду"}
-                                                          title={"Open modal window for add new PackCard"}/></li>
+                                                       title={"Open modal window for add new PackCard"}/></li>
                         <li><a onClick={onLogoutHandler}>Выход</a></li>
                     </ul>
 

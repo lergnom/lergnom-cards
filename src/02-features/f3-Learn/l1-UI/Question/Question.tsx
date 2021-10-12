@@ -25,8 +25,8 @@ export const Question: React.FC<QuestionTypeProps> = ({card, cardName, returnAct
                 <h1>Learn: {`"${cardName}"`}</h1>
                 <h2> Question: {card.question}</h2>
                 <div className={s.buttonsWrapper}>
-                    <Link to={PATH.PROFILE_PAGE}><SuperButton>Cancel</SuperButton></Link>
-                    <SuperButton onClick={() => {
+                    <Link to={PATH.PROFILE_PAGE}><SuperButton btnSecondary>Cancel</SuperButton></Link>
+                    <SuperButton btnPrimary onClick={() => {
                         setShow(true);
                     }}>Show answer</SuperButton>
                 </div>
@@ -50,8 +50,8 @@ export const Question: React.FC<QuestionTypeProps> = ({card, cardName, returnAct
                 </div>
 
                 <div className={s.buttonsWrapper}>
-                    <Link to={PATH.PROFILE_PAGE}><SuperButton>Cancel</SuperButton></Link>
-                    <SuperButton onClick={() => {
+                    <Link to={PATH.PROFILE_PAGE}><SuperButton btnSecondary> Cancel</SuperButton></Link>
+                    <SuperButton btnPrimary onClick={() => {
                         returnAction(card._id, rate);
                         setShow(false);
                     }}>Next</SuperButton>
