@@ -17,6 +17,19 @@ export  type ResponseType<D = {}> = {
     tokenDeathTime: number,
 }
 
+export  type ResponseCardType<D = {}> = {
+    cards: Array<CardType>
+    cardsTotalCount: number
+    maxGrade: number
+    minGrade: number
+    packUserId: string
+    page: number
+    pageCount: number
+    token: string
+    tokenDeathTime: number
+}
+
+
 export type CardPack = {
     cardsCount: number,
     created: string,
@@ -53,7 +66,6 @@ export type CardType = {
 }
 
 
-
 export const PacksListApi = {
     getCardsPacks(page?: number, pageCount?: number, packName?: string, min?: number, max?: number, user_id?: string, sortPacks?: string) {
         return instance.get<ResponseType<Array<CardPack>>>('cards/pack/', {
@@ -80,17 +92,17 @@ export const PacksListApi = {
     },
 
     getCards(packListId: string, page?: number, pageCount?: number) {
-        return instance.get<ResponseType<Array<CardType>>>(`/cards/card`, {
+        return instance.get<ResponseCardType<Array<CardType>>>(`/cards/card`, {
             params: {
                 cardsPack_id: packListId,
                 page,
                 pageCount, // количество карточек за один запрос
             }
-        })
+        });
     },
 
     addNewCard(payload: { cardsPack_id: string, question?: string, answer?: string }) {
-        return instance.post<ResponseType>(`/cards/card`, {card: payload});
+        return instance.post<ResponseCardType>(`/cards/card`, {card: payload});
     },
     deleteCard(id: string) {
         return instance.delete(`/cards/card?id=${id}`);
