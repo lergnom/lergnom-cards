@@ -9,7 +9,7 @@
 
 
 .default:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .btnPrimary {
@@ -32,6 +32,10 @@
     border-color: #0062cc;
 }
 
+.btnPrimary:disabled {
+    opacity: 0.2;
+}
+
 .btnSecondary {
     color: #fff;
     background-color: #343a40;
@@ -42,6 +46,10 @@
     /*font-size: 1.25rem;*/
     /*line-height: 1.5;*/
     border-radius: .3rem;
+}
+
+.btnSecondar:disabled {
+    opacity: 0.2;
 }
 
 .btnSecondary:hover {
