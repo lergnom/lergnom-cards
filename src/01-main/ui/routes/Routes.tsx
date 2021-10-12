@@ -8,6 +8,7 @@ import {PasswordRecovery} from "../../../02-features/f1-auth/a1-UI/a4-passwordRe
 import {PageNotFound} from "../../../02-features/f1-auth/a1-UI/a5-pageNotFound/PageNotFound";
 import {LoginPageContainer} from "../../../02-features/f1-auth/a1-UI/a1-login/l1-loginPage/LoginPageContainer";
 import {ProfileContainer} from "../../../02-features/f1-auth/a1-UI/a3-profile/ProfileContainer";
+import {LearnContainer} from "../../../02-features/f4-Learn/l1-UI/LearnContainer";
 
 export const PATH = {
     HOME: '/',
@@ -20,6 +21,7 @@ export const PATH = {
     PASSWORD_RECOVERY_PAGE: '/pass',
     TABLE_USER: '/table',
     PAGE_NOT_FOUND: '/404',
+    LEARN: '/learn/:cardPackId&:cardPackName',
 };
 
 export const Routes = () => {
@@ -37,6 +39,7 @@ export const Routes = () => {
                 <Route path={PATH.PROFILE_PAGE} render={() => <ProfileContainer/>}/>
                 <Route path={PATH.PASSWORD_RECOVERY_PAGE} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PAGE_NOT_FOUND} render={() => <PageNotFound/>}/>
+                <Route path={PATH.LEARN} render={() => <LearnContainer/>}/>
                 <Route path={'*'} render={() => <PageNotFound/>}/>
 
             </Switch>
