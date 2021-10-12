@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../../01-main/bll/store";
 import {UserType} from "../../a3-DAL/authApi";
 import {Profile} from "./Profile";
-import {Redirect} from "react-router-dom";
+import {Redirect, useParams, useRouteMatch} from "react-router-dom";
 import {PATH} from "../../../../01-main/ui/routes/Routes";
 import {requestOnLogoutUser} from "../../a2-BLL/auth-reducer";
 import {ToggleCheckBox} from "../../../../03-common/components/CheckBoxToggle/ToggleCheckBox";
@@ -36,6 +36,8 @@ export const ProfileContainer: React.FC = () => {
     }, [debouncedSearchPackName]);
 
     if (!user && isInitialized) return <Redirect to={PATH.LOGIN_PAGE}/>;
+
+
     return (
         <>
             <div className={s.container}>

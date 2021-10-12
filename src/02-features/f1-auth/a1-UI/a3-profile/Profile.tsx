@@ -28,7 +28,7 @@ export const Profile: React.FC<ProfileTypeProps> = ({title, subtitle, avatar, us
 
             <div className={s.navigation}>
                 <div className={s.navigationTitle}>
-                    SORT & SEARCH:
+                    Your possibilities
                 </div>
                 {children}
             </div>

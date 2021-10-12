@@ -9,6 +9,7 @@ import {PageNotFound} from "../../../02-features/f1-auth/a1-UI/a5-pageNotFound/P
 import {LoginPageContainer} from "../../../02-features/f1-auth/a1-UI/a1-login/l1-loginPage/LoginPageContainer";
 import {ProfileContainer} from "../../../02-features/f1-auth/a1-UI/a3-profile/ProfileContainer";
 import {LearnContainer} from "../../../02-features/f3-Learn/l1-UI/LearnContainer";
+import {ProfileCards} from "../../../02-features/f1-auth/a1-UI/a3-profile/ProfileCards";
 
 export const PATH = {
     HOME: '/',
@@ -17,11 +18,12 @@ export const PATH = {
     SUPER_INPUT: '/input',
     LOGIN_PAGE: '/login',
     LOGIN_SIGN_UP: '/registration',
-    PROFILE_PAGE: '/profile',
+    PROFILE_PAGE: '/profile/',
     PASSWORD_RECOVERY_PAGE: '/pass',
     TABLE_USER: '/table',
     PAGE_NOT_FOUND: '/404',
     LEARN: '/learn/:cardPackId&:cardPackName',
+    CARDS: '/cards/:cardPackId',
 };
 
 export const Routes = () => {
@@ -37,6 +39,7 @@ export const Routes = () => {
                 <Route path={PATH.LOGIN_PAGE} render={() => <LoginPageContainer/>}/>
                 <Route path={PATH.LOGIN_SIGN_UP} render={() => <RegistrationPage/>}/>
                 <Route path={PATH.PROFILE_PAGE} render={() => <ProfileContainer/>}/>
+                <Route path={PATH.CARDS} render={() => <ProfileCards/>}/>
                 <Route path={PATH.PASSWORD_RECOVERY_PAGE} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PAGE_NOT_FOUND} render={() => <PageNotFound/>}/>
                 <Route path={PATH.LEARN} render={() => <LearnContainer/>}/>

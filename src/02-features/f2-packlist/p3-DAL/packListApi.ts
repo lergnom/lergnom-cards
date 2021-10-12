@@ -35,6 +35,24 @@ export type CardPack = {
     _id: string
 }
 
+export type CardType = {
+    answer: string
+    cardsPack_id: string
+    comments: string
+    created: string
+    grade: number
+    more_id: string
+    question: string
+    rating: number
+    shots: number
+    type: string
+    updated: string
+    user_id: string
+    __v: number
+    _id: string
+}
+
+
 
 export const PacksListApi = {
     getCardsPacks(page?: number, pageCount?: number, packName?: string, min?: number, max?: number, user_id?: string, sortPacks?: string) {
@@ -61,4 +79,23 @@ export const PacksListApi = {
         return instance.put(`cards/pack/`, {cardsPack: payload});
     },
 
+    getCards(packListId: string, page?: number, pageCount?: number) {
+        return instance.get<ResponseType<Array<CardType>>>(`/cards/card`, {
+            params: {
+                cardsPack_id: packListId,
+                page,
+                pageCount, // количество карточек за один запрос
+            }
+        })
+    },
+
+    addNewCard(payload: { cardsPack_id: string, question?: string, answer?: string }) {
+        return instance.post<ResponseType>(`/cards/card`, {card: payload});
+    },
+    deleteCard(id: string) {
+        return instance.delete(`/cards/card?id=${id}`);
+    },
+    updateCard(payload: { _id: string, question: string, answer: string }) {
+        return instance.put(`/cards/card`, {card: payload});
+    },
 };
