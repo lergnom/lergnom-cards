@@ -12,7 +12,7 @@ export const Modal: React.FC<ModalTypeProps> = (
     {
         show,
         height = 200,
-        width = 300,
+        width = 400,
         backgroundOnClick = () => {
         },
         children,

@@ -9,6 +9,7 @@ import {PATH} from "../../../../01-main/ui/routes/Routes";
 import {requestOnLogoutUser} from "../../a2-BLL/auth-reducer";
 import {AddCardPackModalContainer} from "../../../../03-common/components/modalsContainers/AddCardPackModalContainer";
 import {CardsContainer} from "../../../f2-packlist/p1-UI/CardsContainer";
+import {AddCardModalContainer} from "../../../../03-common/components/modalsContainers/AddCardModalContainer";
 
 export const ProfileCards: React.FC = () => {
     const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
@@ -34,7 +35,7 @@ export const ProfileCards: React.FC = () => {
                 <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar}
                          userName={user?.name}>
                     <ul>
-                        <li><AddCardPackModalContainer buttonTitle={"Новый вопрос-ответ"}
+                        <li><AddCardModalContainer buttonTitle={"Новый вопрос-ответ"}
                                                        title={"Open modal window for add new PackCard"}/></li>
                         <li><a onClick={onHandlerBackButton}>Назад</a></li>
                         <li><a onClick={onLogoutHandler}>Выход</a></li>
