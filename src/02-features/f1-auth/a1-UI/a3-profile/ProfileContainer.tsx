@@ -21,10 +21,12 @@ export const ProfileContainer: React.FC = () => {
     const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
     const dispatch = useDispatch();
     const onLogoutHandler = () => dispatch(requestOnLogoutUser());
-    const [myPack, setMyPack] = useState<boolean>(false);
+    // const [myPack, setMyPack] = useState<boolean>(false);
+    const myPack = useSelector<AppStoreType, boolean>(state => state.packList.myPacks);
+
     const changeCheckedMyPacks = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(getMyPacksCards(e.currentTarget.checked));
-        setMyPack(e.currentTarget.checked);
+        // setMyPack(e.currentTarget.checked);
     };
 
     const debouncedSearchPackName = useDebounce(searchPackName, 1000);

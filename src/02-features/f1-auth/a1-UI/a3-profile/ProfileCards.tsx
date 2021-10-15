@@ -7,13 +7,14 @@ import {Profile} from "./Profile";
 import {Redirect, useHistory, useParams} from "react-router-dom";
 import {PATH} from "../../../../01-main/ui/routes/Routes";
 import {requestOnLogoutUser} from "../../a2-BLL/auth-reducer";
-import {AddCardPackModalContainer} from "../../../../03-common/components/modalsContainers/AddCardPackModalContainer";
 import {CardsContainer} from "../../../f2-packlist/p1-UI/CardsContainer";
 import {AddCardModalContainer} from "../../../../03-common/components/modalsContainers/AddCardModalContainer";
+import {CardType} from "../../../f2-packlist/p3-DAL/packListApi";
 
 export const ProfileCards: React.FC = () => {
     const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
     const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
+    const cardsList = useSelector<AppStoreType, Array<CardType>>(state => state.cards.cardsList);
     const history = useHistory();
     const dispatch = useDispatch();
     const onLogoutHandler = () => dispatch(requestOnLogoutUser());
@@ -35,8 +36,9 @@ export const ProfileCards: React.FC = () => {
                 <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar}
                          userName={user?.name}>
                     <ul>
+                        {user?._id === cardsList[0]?.user_id &&
                         <li><AddCardModalContainer buttonTitle={"Новый вопрос-ответ"}
-                                                       title={"Open modal window for add new PackCard"}/></li>
+                                                   title={"Open modal window for add new PackCard"}/></li>}
                         <li><a onClick={onHandlerBackButton}>Назад</a></li>
                         <li><a onClick={onLogoutHandler}>Выход</a></li>
                     </ul>
