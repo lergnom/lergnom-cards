@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import SuperButton from "../SuperButton/SuperButton";
 import {SuperInput} from "../SuperInput/SuperInput";
 import {Modal} from "./Modal";
+import s from "./AddCardModule.module.css";
 
 type AddItemModalContainerTypeProps = {
     isButtonDisabled?: boolean
@@ -47,10 +48,14 @@ export const AddCardModalContainer = ({
 
             <Modal show={show} backgroundOnClick={clickHandlerHiddenModal} width={413} height={290}>
                 <h1 style={{color: 'black'}}>Добавить карту</h1>
-                <label>Question:</label>
-                <SuperInput autoFocus value={question} onChangeText={setQuestion} title={"Add question"}/>
-                <label>Answer:</label>
-                <SuperInput value={answer} onChangeText={setAnswer} title={"Add Answer"}/>
+                <div className={s.modalBlock}>
+                    <label>Question:</label>
+                    <SuperInput autoFocus value={question} onChangeText={setQuestion} title={"Add question"}/>
+                </div>
+                <div className={s.modalBlock}>
+                    <label>Answer:</label>
+                    <SuperInput value={answer} onChangeText={setAnswer} title={"Add Answer"}/>
+                </div>
                 <SuperButton btnPrimary title={"Add new CardPack"} disabled={isButtonDisabled}
                              onClick={clickHandlerAddNewPack}>add card</SuperButton>
             </Modal>
