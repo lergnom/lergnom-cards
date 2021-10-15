@@ -28,7 +28,7 @@ export const ProfileCards: React.FC = () => {
 
     if (!user && isInitialized) return <Redirect to={PATH.LOGIN_PAGE}/>;
 
-
+    console.log('cardList', cardsList);
     return (
         <>
             <div className={s.container}>
@@ -36,9 +36,8 @@ export const ProfileCards: React.FC = () => {
                 <Profile title={"CARD PACK"} subtitle={"закрепление навыков"} avatar={user?.avatar}
                          userName={user?.name}>
                     <ul>
-                        {user?._id === cardsList[0]?.user_id &&
                         <li><AddCardModalContainer buttonTitle={"Новый вопрос-ответ"}
-                                                   title={"Open modal window for add new PackCard"}/></li>}
+                                                   title={"Open modal window for add new PackCard"}/></li>
                         <li><a onClick={onHandlerBackButton}>Назад</a></li>
                         <li><a onClick={onLogoutHandler}>Выход</a></li>
                     </ul>
