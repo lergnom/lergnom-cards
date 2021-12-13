@@ -56,7 +56,6 @@ export const getQuestions = (id: string) => async (dispatch: Dispatch<any>) => {
         dispatch(setFetch(false));
         // dispatch(setQuestNumber(getRandomTest(response.data.cards.length)));
     } catch (e) {
-        console.log(e);
     } finally {
         dispatch(setFetch(false));
     }
@@ -67,8 +66,6 @@ export const getQuestionsAfterAnswer = (card_id: string, grade: number) => async
         await dispatch(deleteCard(card_id));
         // dispatch(setQuestNumber(getRandomTest(value)));
         const response = await learnApi.setGrade({card_id, grade});
-        console.log('Thunk work');
-        console.log(response);
     } catch (e) {
 
     }

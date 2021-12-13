@@ -22,7 +22,6 @@ export const userReducer = (state: InitStateType = initState, action: ActionsTyp
     switch (action.type) {
         case "GET_USERS": {
             const users = action.users;
-            console.log("userReducer", users);
             return [...action.users];
         }
         default:
