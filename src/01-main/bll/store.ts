@@ -7,7 +7,6 @@ import {learnReducer} from "../../02-features/f3-Learn/l2-BLL/learn-reducer";
 import {cardsReducer} from "../../02-features/f2-packlist/p2-BLL/cards-reducer";
 
 const rootReducer = combineReducers({
-    // users: userReducer,
     app: appReducer,
     auth: authReducer,
     packList: packsListReducer,
