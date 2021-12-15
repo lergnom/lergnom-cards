@@ -16,17 +16,14 @@ import {AddCardPackModalContainer} from "../../../../03-common/components/modals
 
 export const ProfileContainer: React.FC = () => {
     const [searchPackName, setSearchPackName] = useState<string>('');
-
     const user = useSelector<AppStoreType, UserType | null>(state => state.auth.user);
     const isInitialized = useSelector<AppStoreType, boolean>(state => state.app.initialized);
     const dispatch = useDispatch();
     const onLogoutHandler = () => dispatch(requestOnLogoutUser());
-    // const [myPack, setMyPack] = useState<boolean>(false);
     const myPack = useSelector<AppStoreType, boolean>(state => state.packList.myPacks);
 
     const changeCheckedMyPacks = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(getMyPacksCards(e.currentTarget.checked));
-        // setMyPack(e.currentTarget.checked);
     };
 
     const debouncedSearchPackName = useDebounce(searchPackName, 1000);

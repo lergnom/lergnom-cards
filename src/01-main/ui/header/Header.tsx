@@ -35,35 +35,6 @@ export const Header = () => {
                     </NavLink>
                 </li>
             </ul>
-            {/*<ul className={s.ulWrapper}>*/}
-            {/*    <h3>Components:</h3>*/}
-            {/*    <li>*/}
-            {/*        <NavLink to={PATH.SUPER_BUTTON} activeClassName={s.active}>*/}
-            {/*            Button*/}
-            {/*        </NavLink>*/}
-            {/*    </li>*/}
-
-            {/*    <li>*/}
-            {/*        <NavLink to={PATH.SUPER_INPUT} activeClassName={s.active}>*/}
-            {/*            Input*/}
-            {/*        </NavLink>*/}
-            {/*    </li>*/}
-            {/*    <li>*/}
-            {/*        <NavLink to={PATH.SUPER_CHECKBOX} activeClassName={s.active}>*/}
-            {/*            CheckBox*/}
-            {/*        </NavLink>*/}
-            {/*    </li>*/}
-            {/*</ul>*/}
-            {/*<ul className={s.ulWrapper}>*/}
-            {/*    <h3>Example:</h3>*/}
-            {/*    <li>*/}
-            {/*        <NavLink to={PATH.TABLE_USER} activeClassName={s.active}>*/}
-            {/*            Redux/Reducer/Thunk*/}
-            {/*        </NavLink>*/}
-            {/*    </li>*/}
-
-            {/*</ul>*/}
-
         </>
     );
 };
